@@ -1,25 +1,26 @@
-package com.test.murni.ui.notifications
+package com.test.murni.ui.activity.detail_report
 
 import androidx.lifecycle.viewModelScope
 import com.test.murni.core.BaseViewModel
 import com.test.murni.data.model.Article
-import com.test.murni.domain.usecase.report.GetReportUseCase
+import com.test.murni.domain.usecase.report.GetReportDetailUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class NotificationsViewModel(
-    private var getReportUseCase: GetReportUseCase
-) : BaseViewModel() {
+class DetailReportViewModel(
+    private val getReportDetailUseCase: GetReportDetailUseCase
+): BaseViewModel() {
+    private val _state = MutableStateFlow<DetailReportViewState>(DetailReportViewState.Init)
+    val state: StateFlow<DetailReportViewState> get() = _state
 
-    private val _state = MutableStateFlow<NotificationViewState>(NotificationViewState.Init)
-    val state: StateFlow<NotificationViewState> get() = _state
+    var id: Int? = 0
 
-    fun getBlog() {
+    fun getReport() {
         viewModelScope.launch {
-            getReportUseCase.execute()
+            getReportDetailUseCase.execute(id)
                 .onStart { showLoading() }
                 .catch { e ->
                     hideLoading()
@@ -32,21 +33,21 @@ class NotificationsViewModel(
         }
     }
 
-    private fun onShowArticle(result: List<Article>) {
-        _state.value = NotificationViewState.ShowReport(result)
+    private fun onShowArticle(result: Article) {
+        _state.value = DetailReportViewState.ShowReport(result)
     }
 
     private fun onShowMessage(error: String) {
         if (error.isNotEmpty()) {
-            _state.value = NotificationViewState.ShowMessage(message = error)
+            _state.value = DetailReportViewState.ShowMessage(message = error)
         }
     }
 
     private fun hideLoading() {
-        _state.value = NotificationViewState.Progress(isLoading = false)
+        _state.value = DetailReportViewState.Progress(isLoading = false)
     }
 
     private fun showLoading() {
-        _state.value = NotificationViewState.Progress(isLoading = true)
+        _state.value = DetailReportViewState.Progress(isLoading = true)
     }
 }

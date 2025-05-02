@@ -1,5 +1,6 @@
 package com.test.murni.ui.notifications
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +14,12 @@ import com.test.murni.R
 import com.test.murni.core.BaseFragment
 import com.test.murni.data.model.Article
 import com.test.murni.databinding.FragmentNotificationsBinding
+import com.test.murni.ui.activity.detail_report.DetailReportActivity
 import com.test.murni.ui.adapter.AdapterClickListener
 import com.test.murni.ui.adapter.ArticleAdapter
 import com.test.murni.ui.adapter.ReportAdapter
 import com.test.murni.ui.dashboard.DashBoardViewState
+import com.test.murni.utils.K
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
@@ -31,7 +34,9 @@ class NotificationsFragment : BaseFragment<FragmentNotificationsBinding>() {
     private var reportAdapter = ReportAdapter(arrayListOf()).apply {
         listener = object : AdapterClickListener<Article> {
             override fun onItemClick(data: Article) {
-
+                val intent = Intent(context, DetailReportActivity::class.java)
+                intent.putExtra(K.KEY_ID, data.id)
+                startActivity(intent)
             }
 
             override fun onViewClick(view: View, data: Article) {

@@ -19,4 +19,17 @@ class ReportRepositoryImpl(private val reportDataSource: ReportDataSource) : Rep
             }
         }
     }
+
+    override suspend fun getReportDetail(id: Int?): Flow<Article> {
+        return flow {
+            val response = reportDataSource.getReportDetail(id)
+            if (response.isSuccessful) {
+                val body = response.body()
+                emit(body!!)
+            } else {
+                val errorBody = response.errorBody().get()
+                error(errorBody.message!!)
+            }
+        }
+    }
 }

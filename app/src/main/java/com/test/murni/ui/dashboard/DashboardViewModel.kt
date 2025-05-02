@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(
-    var getBlogUseCase: GetBlogUseCase
+    private var getBlogUseCase: GetBlogUseCase
 ) : BaseViewModel() {
 
     private val _state = MutableStateFlow<DashBoardViewState>(DashBoardViewState.Init)

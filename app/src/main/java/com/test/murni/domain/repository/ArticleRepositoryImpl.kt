@@ -19,4 +19,17 @@ class ArticleRepositoryImpl(private val articleDataSource: ArticleDataSource) : 
             }
         }
     }
+
+    override suspend fun getArticleDetail(id: Int?): Flow<Article> {
+        return flow {
+            val response = articleDataSource.getArticleDetail(id)
+            if (response.isSuccessful) {
+                val body = response.body()
+                emit(body!!)
+            } else {
+                val errorBody = response.errorBody().get()
+                error(errorBody.message!!)
+            }
+        }
+    }
 }

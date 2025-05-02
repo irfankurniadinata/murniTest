@@ -12,6 +12,6 @@ interface ArticleDataSource {
 
     @GET("/v4/articles/{id}")
     suspend fun getArticleDetail(
-        @Path("id") id: String?
-    ): Response<BaseResponse<Article>>
+        @Path("id") id: Int?
+    ): Response<Article>
 }
