@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/toast_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_xlarge"
+        android:background="@drawable/toast_info"
+        android:paddingHorizontal="@dimen/space_large">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_toast_message"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/grey_6"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="normal"
+            tools:text="Telah Terjadi Kesalahan" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_toast_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/space_large"
+            android:paddingStart="@dimen/space_large"
+            android:gravity="center"
+            android:text="@string/close"
+            android:textColor="@color/grey_6"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+</RelativeLayout>

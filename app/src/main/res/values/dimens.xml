@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Typography Heading -->
+    <dimen name="text_heading_1">28sp</dimen>
+    <dimen name="text_heading_2">24sp</dimen>
+    <dimen name="text_heading_3">20sp</dimen>
+    <dimen name="text_heading_4">18sp</dimen>
+    <dimen name="text_heading_5">16sp</dimen>
+    <dimen name="text_heading_6">14sp</dimen>
+
+    <!-- Typography Body -->
+    <dimen name="text_super_large">24sp</dimen>
+    <dimen name="text_xxlarge">22sp</dimen>
+    <dimen name="text_xlarge">18sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_xsmall">10sp</dimen>
+    <dimen name="text_title_small">10sp</dimen>
+    <dimen name="text_title_xsmall">8sp</dimen>
+
+    <!-- Navigation -->
+    <dimen name="navigation_height">56dp</dimen>
+    <dimen name="navigation_icon">24dp</dimen>
+    <dimen name="navigation_title">16sp</dimen>
+    <dimen name="navigation_side_space">16dp</dimen>
+
+    <!-- Space - Mobile -->
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_36">36dp</dimen>
+    <dimen name="space_30">30dp</dimen>
+    <dimen name="space_super_large">24dp</dimen>
+    <dimen name="space_xxlarge">20dp</dimen>
+    <dimen name="space_xlarge">16dp</dimen>
+    <dimen name="space_large">12dp</dimen>
+    <dimen name="space_medium">10dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_xsmall">6dp</dimen>
+    <dimen name="space_super_small">4dp</dimen>
+    <dimen name="space_super_xsmall">2dp</dimen>
+
+    <dimen name="keyboard_size">56dp</dimen>
+    <dimen name="keyboard_space">2dp</dimen>
+    <dimen name="form_input_size">46dp</dimen>
+    <dimen name="nav_bar_height">56dp</dimen>
+
+    <!-- Border Radius -->
+    <dimen name="radius_xsmall">4dp</dimen>
+    <dimen name="radius_small">6dp</dimen>
+    <dimen name="radius_medium">8dp</dimen>
+    <dimen name="radius_large">12dp</dimen>
+    <dimen name="radius_xlarge">16dp</dimen>
+    <dimen name="radius_24">24dp</dimen>
+    <dimen name="radius_100">100dp</dimen>
+    <dimen name="radius_input_field">6dp</dimen>
+
+    <!-- Icon Size -->
+    <dimen name="size_16">16dp</dimen>
+    <dimen name="size_20">20dp</dimen>
+    <dimen name="size_24">24dp</dimen>
+    <dimen name="size_32">32dp</dimen>
+    <dimen name="size_36">36dp</dimen>
+    <dimen name="size_40">40dp</dimen>
+
+</resources>

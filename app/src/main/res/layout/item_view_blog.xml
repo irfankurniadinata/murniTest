@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.test.murni.data.model.Article" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/section_blog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/space_xlarge"
+        android:paddingBottom="@dimen/space_small">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:cardCornerRadius="@dimen/radius_medium"
+            android:layout_marginTop="@dimen/space_small"
+            android:layout_marginBottom="@dimen/space_large"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_blog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_launcher_background" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_blog_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/space_large"
+            android:textColor="@color/grey_1"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:lines="2"
+            android:ellipsize="end"
+            tools:text="THE BOY AND THE HERON" />
+
+    </LinearLayout>
+</layout>
